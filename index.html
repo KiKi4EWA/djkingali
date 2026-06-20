@@ -166,32 +166,24 @@
       inset: 0;
       background: linear-gradient(
         to top,
-        rgba(0,0,0,0.75) 0%,
-        rgba(0,0,0,0.1) 50%,
-        transparent 100%
+        rgba(0,0,0,0.45) 0%,
+        transparent 45%
       );
     }
 
     .hero-title {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 2rem clamp(1.25rem, 4vw, 3rem);
-      font-size: clamp(3.5rem, 13vw, 10rem);
-      line-height: 0.82;
-      letter-spacing: 0.02em;
+      bottom: clamp(1rem, 3vw, 2rem);
+      left: clamp(1rem, 4vw, 2.5rem);
+      font-size: clamp(1.8rem, 5.5vw, 5rem);
+      line-height: 1;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      mix-blend-mode: screen;
     }
 
-    .section--k .hero-title {
-      color: #fff;
-      text-shadow: 0 0 80px rgba(85,102,255,0.5);
-    }
-
-    .section--a .hero-title {
-      color: #fff;
-      text-shadow: 0 0 80px rgba(240,160,32,0.4);
-    }
+    .section--k .hero-title { color: rgba(195, 175, 255, 0.62); }
+    .section--a .hero-title { color: rgba(255, 218, 130, 0.62); }
 
     /* ─── CONTENT ──────────────────────────────── */
     .section-inner {
@@ -379,7 +371,7 @@
     <div class="hero-wrap">
       <img src="img/hero_kingali.webp" alt="DJ KINGALI">
       <div class="hero-overlay"></div>
-      <h1 class="hero-title">DJ<br>KINGALI</h1>
+      <h1 class="hero-title">DJ KINGALI</h1>
     </div>
 
     <div class="section-inner">
@@ -423,7 +415,7 @@
     <div class="hero-wrap">
       <img src="img/hero_ajayfiz.webp" alt="AJAYFIZ & VIVA BAKER">
       <div class="hero-overlay"></div>
-      <h1 class="hero-title">AJAYFIZ<br>& VIVA<br>BAKER</h1>
+      <h1 class="hero-title">AJAYFIZ & VIVA BAKER</h1>
     </div>
 
     <div class="section-inner">
