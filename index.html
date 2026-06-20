@@ -22,9 +22,17 @@
   <meta name="twitter:image" content="https://dj.danielmatysiak.de/img/hero_kingali.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
+    @font-face {
+      font-family: "AHDN";
+      src: url("ahdn.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -43,7 +51,7 @@
 
     body {
       background: #000;
-      font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+      font-family: "AHDN", sans-serif;
       overflow-x: hidden;
       color: #fff;
     }
@@ -175,9 +183,10 @@
       position: absolute;
       bottom: clamp(1rem, 3vw, 2rem);
       left: clamp(1rem, 4vw, 2.5rem);
-      font-size: clamp(1.8rem, 5.5vw, 5rem);
+      font-family: "AHDN", sans-serif;
+      font-size: clamp(2.8rem, 8vw, 8rem);
       line-height: 1;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       white-space: nowrap;
       mix-blend-mode: screen;
     }
@@ -415,7 +424,7 @@
     <div class="hero-wrap">
       <img src="img/hero_ajayfiz.webp" alt="AJAYFIZ & VIVA BAKER">
       <div class="hero-overlay"></div>
-      <h1 class="hero-title">AJAYFIZ & VIVA BAKER</h1>
+      <h1 class="hero-title">DJ AJAYFIZ & VIVA BAKER</h1>
     </div>
 
     <div class="section-inner">
