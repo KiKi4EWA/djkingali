@@ -1,0 +1,18 @@
+{
+  "name": "DJKINGALI",
+  "short_name": "DJKINGALI",
+  "description": "DJ KINGALI · AJAYFIZZ & VIVA BAKER · Berlin",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#06060f",
+  "theme_color": "#06060f",
+  "icons": [
+    {
+      "src": "flyer/Kingali_fuchsi.jpg",
+      "sizes": "any",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

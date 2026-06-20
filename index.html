@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>DJKINGALI</title>
+  <meta name="description" content="DJ KINGALI · AJAYFIZZ & VIVA BAKER · Berlin">
+
+  <!-- PWA -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DJKINGALI">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="flyer/Kingali_fuchsi.jpg">
+
+  <!-- OG -->
+  <meta property="og:title" content="DJKINGALI">
+  <meta property="og:description" content="DJ KINGALI · AJAYFIZZ & VIVA BAKER · Berlin">
+  <meta property="og:image" content="flyer/Kingali_fuchsi.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="flyer/Kingali_fuchsi.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --k-bg:     #06060f;
+      --k-accent: #5566ff;
+      --k-glow:   rgba(85, 102, 255, 0.6);
+      --k-border: #1a1a44;
+      --k-text:   #c8d4ff;
+
+      --a-bg:     #0c0700;
+      --a-accent: #f0a020;
+      --a-glow:   rgba(240, 160, 32, 0.5);
+      --a-border: #4a2e00;
+      --a-text:   #f5e4c0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #000;
+      font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+      overflow-x: hidden;
+      color: #fff;
+    }
+
+    /* ─── GATEWAY ─────────────────────────────── */
+    .gateway {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100dvh;
+      min-height: 400px;
+    }
+
+    @media (max-width: 600px) {
+      .gateway {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+    }
+
+    .gate {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .gate-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.18) saturate(1.3);
+      transition: filter 0.5s ease;
+    }
+
+    .gate:hover .gate-bg,
+    .gate:active .gate-bg {
+      filter: brightness(0.28) saturate(1.6);
+    }
+
+    .gate-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .gate-name {
+      display: block;
+      font-size: clamp(2.2rem, 7vw, 5.5rem);
+      line-height: 0.88;
+      letter-spacing: 0.03em;
+      transition: text-shadow 0.3s ease;
+    }
+
+    .gate-sub {
+      display: block;
+      font-size: clamp(0.7rem, 2vw, 1.1rem);
+      letter-spacing: 0.22em;
+      margin-top: 0.6rem;
+      opacity: 0.55;
+    }
+
+    .gate-cta {
+      position: absolute;
+      bottom: 1.75rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gate:hover .gate-cta,
+    .gate:active .gate-cta { opacity: 0.5; }
+
+    /* KINGALI */
+    .gate--k { background: var(--k-bg); border-right: 1px solid var(--k-border); }
+    .gate--k .gate-bg { background-image: url('flyer/Kingali_fuchsi.jpg'); }
+    .gate--k .gate-name {
+      color: var(--k-accent);
+      text-shadow: 0 0 30px var(--k-glow), 0 0 60px rgba(85,102,255,0.3);
+    }
+    .gate--k .gate-sub  { color: var(--k-text); }
+    .gate--k .gate-cta  { color: var(--k-accent); }
+
+    /* AJAYFIZZ */
+    .gate--a { background: var(--a-bg); }
+    .gate--a .gate-bg { background-image: url('flyer/PHOTO-2025-04-13-21-24-24.jpg'); }
+    .gate--a .gate-name {
+      color: var(--a-accent);
+      text-shadow: 0 0 30px var(--a-glow), 0 0 60px rgba(240,160,32,0.25);
+    }
+    .gate--a .gate-sub  { color: var(--a-text); }
+    .gate--a .gate-cta  { color: var(--a-accent); }
+
+    @media (max-width: 600px) {
+      .gate--k { border-right: none; border-bottom: 1px solid var(--k-border); }
+    }
+
+    /* ─── SECTION ──────────────────────────────── */
+    .section {
+      padding: 5rem 1.5rem 4rem;
+    }
+
+    .section-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section--k { background: var(--k-bg); }
+    .section--a { background: var(--a-bg); }
+
+    .section-title {
+      font-size: clamp(3.5rem, 11vw, 9rem);
+      line-height: 0.82;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.3rem;
+    }
+
+    .section--k .section-title {
+      color: var(--k-accent);
+      text-shadow: 0 0 60px rgba(85,102,255,0.4);
+    }
+
+    .section--a .section-title {
+      color: var(--a-accent);
+      text-shadow: 0 0 60px rgba(240,160,32,0.35);
+    }
+
+    .section-genre {
+      font-size: clamp(0.7rem, 2vw, 1rem);
+      letter-spacing: 0.25em;
+      opacity: 0.38;
+      margin-bottom: 3rem;
+    }
+
+    /* Flyer grid */
+    .flyer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .flyer-grid img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .flyer-grid img:hover {
+      transform: scale(1.02);
+      filter: brightness(1.1);
+    }
+
+    /* Gigs */
+    .block-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      opacity: 0.35;
+      margin-bottom: 0.9rem;
+    }
+
+    .gig-list { margin-bottom: 3.5rem; }
+
+    .gig-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.1rem 1.3rem;
+      border-radius: 5px;
+      border: 1px solid;
+      margin-bottom: 0.6rem;
+    }
+
+    .section--k .gig-card { border-color: var(--k-border); background: rgba(85,102,255,0.05); }
+    .section--a .gig-card { border-color: var(--a-border); background: rgba(240,160,32,0.05); }
+
+    .gig-date {
+      display: block;
+      font-size: clamp(1.3rem, 4.5vw, 2rem);
+      line-height: 1;
+    }
+
+    .section--k .gig-date { color: var(--k-accent); }
+    .section--a .gig-date { color: var(--a-accent); }
+
+    .gig-venue {
+      display: block;
+      font-size: clamp(0.75rem, 2.5vw, 1rem);
+      letter-spacing: 0.1em;
+      opacity: 0.5;
+      margin-top: 0.15rem;
+    }
+
+    .reminder-btn {
+      font-family: inherit;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      padding: 0.45rem 0.75rem;
+      border-radius: 3px;
+      border: 1px solid currentColor;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      opacity: 0.35;
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+
+    .reminder-btn:hover { opacity: 0.85; }
+
+    /* Audio */
+    .audio-block { margin-bottom: 3rem; }
+
+    .audio-placeholder {
+      border: 1px dashed;
+      border-radius: 5px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      opacity: 0.15;
+    }
+
+    .section--k .audio-placeholder { border-color: var(--k-accent); }
+    .section--a .audio-placeholder { border-color: var(--a-accent); }
+
+    audio {
+      width: 100%;
+      margin-top: 0.5rem;
+      filter: invert(0);
+    }
+
+    /* Back */
+    .back-top {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      opacity: 0.25;
+      text-decoration: none;
+      color: inherit;
+      margin-top: 1rem;
+      transition: opacity 0.2s;
+    }
+
+    .back-top:hover { opacity: 0.7; }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #222, transparent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GATEWAY -->
+  <div class="gateway">
+    <a class="gate gate--k" href="#kingali">
+      <div class="gate-bg"></div>
+      <div class="gate-inner">
+        <span class="gate-name">DJ<br>KINGALI</span>
+        <span class="gate-sub">TECHNO · ELECTRONIC</span>
+      </div>
+      <span class="gate-cta">↓ ENTER</span>
+    </a>
+    <a class="gate gate--a" href="#ajayfizz">
+      <div class="gate-bg"></div>
+      <div class="gate-inner">
+        <span class="gate-name">AJAYFIZZ<br>& VIVA<br>BAKER</span>
+        <span class="gate-sub">HIP HOP · VINYL</span>
+      </div>
+      <span class="gate-cta">↓ ENTER</span>
+    </a>
+  </div>
+
+  <!-- DJ KINGALI -->
+  <section class="section section--k" id="kingali">
+    <div class="section-inner">
+      <h1 class="section-title">DJ<br>KINGALI</h1>
+      <p class="section-genre">TECHNO · ELECTRONIC · BERLIN</p>
+
+      <div class="flyer-grid">
+        <img src="flyer/Kingali_fuchsi.jpg" alt="DJ KINGALI @ Fuchsbau, 13.02.">
+        <img src="flyer/ChatGPT Image 29. Dez. 2025, 20_04_34.png" alt="DJ KINGALI @ Lehmann Hasenheide, 30.12.">
+      </div>
+
+      <div class="gig-list">
+        <p class="block-label">NÄCHSTE TERMINE</p>
+        <div class="gig-card">
+          <div>
+            <span class="gig-date">TBA</span>
+            <span class="gig-venue">· · ·</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="audio-block">
+        <p class="block-label">SET / MIXTAPE</p>
+        <div class="audio-placeholder">AUDIO FOLGT</div>
+      </div>
+
+      <a href="#" class="back-top">↑ TOP</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- AJAYFIZZ & VIVA BAKER -->
+  <section class="section section--a" id="ajayfizz">
+    <div class="section-inner">
+      <h1 class="section-title">AJAYFIZZ<br>& VIVA<br>BAKER</h1>
+      <p class="section-genre">HIP HOP · VINYL · 90S – NOW · ATLANTA · EAST · WEST · SOUTH</p>
+
+      <div class="flyer-grid">
+        <img src="flyer/PHOTO-2025-04-13-21-24-24.jpg" alt="AJAYFIZZ & VIVA BAKER @ Monkeybar">
+        <img src="flyer/20250619_0010_DJ Monkeys at Turntables_remix_01jy2hdn4zez1v99qfhf8wvgyr.png" alt="AJAYFIZZ & VIVA BAKER @ Monkeybar">
+      </div>
+
+      <div class="gig-list">
+        <p class="block-label">NÄCHSTE TERMINE</p>
+        <div class="gig-card">
+          <div>
+            <span class="gig-date">TBA</span>
+            <span class="gig-venue">· · ·</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="audio-block">
+        <p class="block-label">SET / MIXTAPE</p>
+        <div class="audio-placeholder">AUDIO FOLGT</div>
+      </div>
+
+      <a href="#" class="back-top">↑ TOP</a>
+    </div>
+  </section>
+
+</body>
+</html>
